@@ -152,6 +152,8 @@
 		0781196B1F960E88008D9288 /* BG */ = {
 			isa = PBXGroup;
 			children = (
+				078119CD1F96ED4A008D9288 /* BGDB.h */,
+				078119CE1F96ED4A008D9288 /* BGDB.m */,
 				078119D11F96F66F008D9288 /* BGFMDB.h */,
 				0781196E1F960E88008D9288 /* BGFMDBConfig.h */,
 				078119711F960E88008D9288 /* BGTool.h */,
@@ -160,8 +162,6 @@
 				078119741F960E88008D9288 /* NSCache+BGCache.m */,
 				078119751F960E88008D9288 /* NSObject+BGModel.h */,
 				078119761F960E88008D9288 /* NSObject+BGModel.m */,
-				078119CD1F96ED4A008D9288 /* BGDB.h */,
-				078119CE1F96ED4A008D9288 /* BGDB.m */,
 			);
 			path = BG;
 			sourceTree = "<group>";
@@ -366,7 +366,8 @@
 				TargetAttributes = {
 					D706630C1CD1EF67009E4B4D = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = XYBK7B7U6R;
+						DevelopmentTeam = RUKZ98YF29;
+						ProvisioningStyle = Automatic;
 					};
 					D70663251CD1EF67009E4B4D = {
 						CreatedOnToolsVersion = 7.3;
@@ -383,6 +384,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -591,18 +593,21 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XYBK7B7U6R;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RUKZ98YF29;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BGFMDB/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hassonneptunus.BGFMDB;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuemoj.BGFMDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -612,18 +617,21 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = XYBK7B7U6R;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RUKZ98YF29;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BGFMDB/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hassonneptunus.BGFMDB;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuemoj.BGFMDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;

@@ -122,6 +122,7 @@ typedef NS_ENUM(NSInteger,bg_getModelInfoType){//过滤数据类型
  如果表格不存在就新建.
  */
 +(BOOL)ifNotExistWillCreateTableWithObject:(id _Nonnull)object ignoredKeys:(NSArray* const _Nullable)ignoredKeys;
++(BOOL)ifNotExistWillCreateTableWithName:(nullable NSString *)tableName object:(id)object ignoredKeys:(NSArray* const)ignoredKeys;
 /**
  整形判断
  */

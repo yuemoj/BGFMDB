@@ -100,9 +100,20 @@
 提示：“唯一约束”优先级高于"主键".
 */
 +(BOOL)bg_saveOrUpdateArray:(NSArray* _Nonnull)array{
+    return [self bg_saveOrUpdateArray:array toTable:nil];
+//    NSAssert(array && array.count,@"数组没有元素!");
+//    __block BOOL result;
+//    [[BGDB shareManager] bg_saveOrUpateArray:array ignoredKeys:bg_getIgnoreKeys complete:^(BOOL isSuccess) {
+//        result = isSuccess;
+//    }];
+//    //关闭数据库
+//    [[BGDB shareManager] closeDB];
+//    return result;
+}
++(BOOL)bg_saveOrUpdateArray:(NSArray* _Nonnull)array toTable:(NSString *)tableName {
     NSAssert(array && array.count,@"数组没有元素!");
     __block BOOL result;
-    [[BGDB shareManager] bg_saveOrUpateArray:array ignoredKeys:bg_getIgnoreKeys complete:^(BOOL isSuccess) {
+    [[BGDB shareManager] bg_saveOrUpateArray:array toTable:tableName ignoredKeys:bg_getIgnoreKeys complete:^(BOOL isSuccess) {
         result = isSuccess;
     }];
     //关闭数据库

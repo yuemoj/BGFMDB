@@ -1634,6 +1634,18 @@ static BGDB* BGdb = nil;
     [self insertIntoTableName:tableName DictArray:dictArray complete:complete];
 }
 /**
+ 批量插入数据
+ */
+-(void)insertToTable:(NSString *)tableName withObjects:(NSArray*)array ignoredKeys:(NSArray* const _Nullable)ignoredKeys complete:(bg_complete_B)complete{
+    NSArray* dictArray = [self getArray:array ignoredKeys:ignoredKeys filtModelInfoType:bg_ModelInfoInsert];
+    //自动判断是否有字段改变,自动刷新数据库.
+    [self ifIvarChangeForObject:array.firstObject ignoredKeys:ignoredKeys];
+    if (!tableName.length) {
+        tableName = [BGTool getTableNameWithObject:array.firstObject];
+    }
+    [self insertIntoTableName:tableName DictArray:dictArray complete:complete];
+}
+/**
  批量更新数据.
  over
  */
@@ -1647,10 +1659,19 @@ static BGDB* BGdb = nil;
  批量存储.
  */
 -(void)saveObjects:(NSArray* _Nonnull)array ignoredKeys:(NSArray* const _Nullable)ignoredKeys complete:(bg_complete_B)complete{
+    [self saveObjects:array toTable:nil ignoredKeys:ignoredKeys complete:complete];
+//    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+//    @autoreleasepool {
+//        [BGTool ifNotExistWillCreateTableWithObject:array.firstObject ignoredKeys:ignoredKeys];
+//        [self insertWithObjects:array ignoredKeys:ignoredKeys complete:complete];
+//    }
+//    dispatch_semaphore_signal(self.semaphore);
+}
+-(void)saveObjects:(NSArray* _Nonnull)array toTable:(NSString *)tableName ignoredKeys:(NSArray* const _Nullable)ignoredKeys complete:(bg_complete_B)complete{
     dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
     @autoreleasepool {
-        [BGTool ifNotExistWillCreateTableWithObject:array.firstObject ignoredKeys:ignoredKeys];
-        [self insertWithObjects:array ignoredKeys:ignoredKeys complete:complete];
+        [BGTool ifNotExistWillCreateTableWithName:tableName object:array.firstObject ignoredKeys:ignoredKeys];
+        [self insertToTable:tableName withObjects:array ignoredKeys:ignoredKeys complete:complete];
     }
     dispatch_semaphore_signal(self.semaphore);
 }
@@ -1669,19 +1690,37 @@ static BGDB* BGdb = nil;
  批量插入或更新.
  */
 -(void)bg_saveOrUpateArray:(NSArray* _Nonnull)array ignoredKeys:(NSArray* const _Nullable)ignoredKeys complete:(bg_complete_B)complete{
-    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
-    @autoreleasepool {
-        //判断是否建表.
-        [BGTool ifNotExistWillCreateTableWithObject:array.firstObject ignoredKeys:ignoredKeys];
-        //自动判断是否有字段改变,自动刷新数据库.
-        [self ifIvarChangeForObject:array.firstObject ignoredKeys:ignoredKeys];
-        //转换模型数据
-        NSArray* dictArray = [self getArray:array ignoredKeys:ignoredKeys filtModelInfoType:bg_ModelInfoNone];
-        //获取自定义表名
-        NSString* tableName = [BGTool getTableNameWithObject:array.firstObject];
-        [self bg_saveOrUpdateWithTableName:tableName class:[array.firstObject class] DictArray:dictArray complete:complete];
-    }
-    dispatch_semaphore_signal(self.semaphore);
+    [self bg_saveOrUpateArray:array toTable:nil ignoredKeys:ignoredKeys complete:complete];
+//    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+//    @autoreleasepool {
+//        //判断是否建表.
+//        [BGTool ifNotExistWillCreateTableWithObject:array.firstObject ignoredKeys:ignoredKeys];
+//        //自动判断是否有字段改变,自动刷新数据库.
+//        [self ifIvarChangeForObject:array.firstObject ignoredKeys:ignoredKeys];
+//        //转换模型数据
+//        NSArray* dictArray = [self getArray:array ignoredKeys:ignoredKeys filtModelInfoType:bg_ModelInfoNone];
+//        //获取自定义表名
+//        NSString* tableName = [BGTool getTableNameWithObject:array.firstObject];
+//        [self bg_saveOrUpdateWithTableName:tableName class:[array.firstObject class] DictArray:dictArray complete:complete];
+//    }
+//    dispatch_semaphore_signal(self.semaphore);
+}
+
+-(void)bg_saveOrUpateArray:(NSArray* _Nonnull)array toTable:(NSString *)tableName ignoredKeys:(NSArray* const _Nullable)ignoredKeys complete:(bg_complete_B)complete{
+   dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+   @autoreleasepool {
+       //判断是否建表.
+       if (!tableName.length) {
+           tableName = [BGTool getTableNameWithObject:array.firstObject];
+       }
+       [BGTool ifNotExistWillCreateTableWithName:tableName object:array.firstObject  ignoredKeys:ignoredKeys];
+       //自动判断是否有字段改变,自动刷新数据库.
+       [self ifIvarChangeForObject:array.firstObject ignoredKeys:ignoredKeys];
+       //转换模型数据
+       NSArray* dictArray = [self getArray:array ignoredKeys:ignoredKeys filtModelInfoType:bg_ModelInfoNone];
+       [self bg_saveOrUpdateWithTableName:tableName class:[array.firstObject class] DictArray:dictArray complete:complete];
+   }
+   dispatch_semaphore_signal(self.semaphore);
 }
 
 /**

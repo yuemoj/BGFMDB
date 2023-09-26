@@ -103,6 +103,7 @@ NSMutableData,UIImage,NSDate,NSURL,NSRange,CGRect,CGSize,CGPoint,自定义对象
  提示：“唯一约束”优先级高于"主键".
  */
 +(BOOL)bg_saveOrUpdateArray:(NSArray* _Nonnull)array;
++(BOOL)bg_saveOrUpdateArray:(NSArray* _Nonnull)array toTable:(nullable NSString *)tableName;
 /**
  同上条件异步.
  */

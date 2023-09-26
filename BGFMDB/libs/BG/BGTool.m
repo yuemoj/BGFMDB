@@ -1145,8 +1145,35 @@ void bg_cleanCache(){
  如果表格不存在就新建.
  */
 +(BOOL)ifNotExistWillCreateTableWithObject:(id)object ignoredKeys:(NSArray* const)ignoredKeys{
+    return [self ifNotExistWillCreateTableWithName:nil object:object ignoredKeys:ignoredKeys];
+//    //检查是否建立了跟对象相对应的数据表
+//    NSString* tableName = [BGTool getTableNameWithObject:object];
+//    //获取"唯一约束"字段名
+//    NSArray* uniqueKeys = [BGTool executeSelector:bg_uniqueKeysSelector forClass:[object class]];
+//    //获取“联合主键”字段名
+//    NSArray* unionPrimaryKeys = [BGTool executeSelector:bg_unionPrimaryKeysSelector forClass:[object class]];
+//    __block BOOL isExistTable;
+//    [[BGDB shareManager] isExistWithTableName:tableName complete:^(BOOL isExist) {
+//        if (!isExist){//如果不存在就新建
+//            NSArray* createKeys = [self bg_filtCreateKeys:[BGTool getClassIvarList:[object class] Object:object onlyKey:NO] ignoredkeys:ignoredKeys];
+//            [[BGDB shareManager] createTableWithTableName:tableName keys:createKeys unionPrimaryKeys:unionPrimaryKeys uniqueKeys:uniqueKeys complete:^(BOOL isSuccess) {
+//                isExistTable = isSuccess;
+//            }];
+//        }
+//    }];
+//
+//    return isExistTable;
+}
+
+/**
+ 如果表格不存在就新建.
+ */
++(BOOL)ifNotExistWillCreateTableWithName:(NSString *)tableName object:(id)object ignoredKeys:(NSArray* const)ignoredKeys{
+    if (!tableName.length) {
+        tableName = [BGTool getTableNameWithObject:object];
+    }
     //检查是否建立了跟对象相对应的数据表
-    NSString* tableName = [BGTool getTableNameWithObject:object];
+//    NSString* tableName = [BGTool getTableNameWithObject:object];
     //获取"唯一约束"字段名
     NSArray* uniqueKeys = [BGTool executeSelector:bg_uniqueKeysSelector forClass:[object class]];
     //获取“联合主键”字段名
