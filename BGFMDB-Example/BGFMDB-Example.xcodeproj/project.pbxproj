@@ -14,6 +14,12 @@
 		5B1DC29F2B5E6252008F78C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B1DC29E2B5E6252008F78C2 /* Assets.xcassets */; };
 		5B1DC2A22B5E6252008F78C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B1DC2A02B5E6252008F78C2 /* LaunchScreen.storyboard */; };
 		5B1DC2A52B5E6252008F78C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1DC2A42B5E6252008F78C2 /* main.m */; };
+		5B1DC2B12B5E68BD008F78C2 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1DC2AC2B5E68BD008F78C2 /* Animal.m */; };
+		5B1DC2B22B5E68BD008F78C2 /* dictToModelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B1DC2AD2B5E68BD008F78C2 /* dictToModelController.xib */; };
+		5B1DC2B32B5E68BD008F78C2 /* dictToModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1DC2B02B5E68BD008F78C2 /* dictToModelController.m */; };
+		5B1DC2BA2B5E68C1008F78C2 /* stockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1DC2B62B5E68C1008F78C2 /* stockModel.m */; };
+		5B1DC2BB2B5E68C1008F78C2 /* stockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1DC2B72B5E68C1008F78C2 /* stockController.m */; };
+		5B1DC2BC2B5E68C1008F78C2 /* stockController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B1DC2B92B5E68C1008F78C2 /* stockController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,16 @@
 		5B1DC2A12B5E6252008F78C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B1DC2A32B5E6252008F78C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B1DC2A42B5E6252008F78C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5B1DC2AC2B5E68BD008F78C2 /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
+		5B1DC2AD2B5E68BD008F78C2 /* dictToModelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dictToModelController.xib; sourceTree = "<group>"; };
+		5B1DC2AE2B5E68BD008F78C2 /* dictToModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictToModelController.h; sourceTree = "<group>"; };
+		5B1DC2AF2B5E68BD008F78C2 /* Animal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
+		5B1DC2B02B5E68BD008F78C2 /* dictToModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dictToModelController.m; sourceTree = "<group>"; };
+		5B1DC2B52B5E68C1008F78C2 /* stockController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stockController.h; sourceTree = "<group>"; };
+		5B1DC2B62B5E68C1008F78C2 /* stockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stockModel.m; sourceTree = "<group>"; };
+		5B1DC2B72B5E68C1008F78C2 /* stockController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stockController.m; sourceTree = "<group>"; };
+		5B1DC2B82B5E68C1008F78C2 /* stockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stockModel.h; sourceTree = "<group>"; };
+		5B1DC2B92B5E68C1008F78C2 /* stockController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = stockController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +61,8 @@
 		5B1DC2862B5E6250008F78C2 = {
 			isa = PBXGroup;
 			children = (
+				5B1DC2B42B5E68C1008F78C2 /* stockController */,
+				5B1DC2AB2B5E68BD008F78C2 /* dictToModelController */,
 				5B1DC2912B5E6250008F78C2 /* BGFMDB-Example */,
 				5B1DC2902B5E6250008F78C2 /* Products */,
 			);
@@ -74,6 +92,32 @@
 				5B1DC2A42B5E6252008F78C2 /* main.m */,
 			);
 			path = "BGFMDB-Example";
+			sourceTree = "<group>";
+		};
+		5B1DC2AB2B5E68BD008F78C2 /* dictToModelController */ = {
+			isa = PBXGroup;
+			children = (
+				5B1DC2AC2B5E68BD008F78C2 /* Animal.m */,
+				5B1DC2AD2B5E68BD008F78C2 /* dictToModelController.xib */,
+				5B1DC2AE2B5E68BD008F78C2 /* dictToModelController.h */,
+				5B1DC2AF2B5E68BD008F78C2 /* Animal.h */,
+				5B1DC2B02B5E68BD008F78C2 /* dictToModelController.m */,
+			);
+			name = dictToModelController;
+			path = "BGFMDB-Example/dictToModelController";
+			sourceTree = "<group>";
+		};
+		5B1DC2B42B5E68C1008F78C2 /* stockController */ = {
+			isa = PBXGroup;
+			children = (
+				5B1DC2B52B5E68C1008F78C2 /* stockController.h */,
+				5B1DC2B62B5E68C1008F78C2 /* stockModel.m */,
+				5B1DC2B72B5E68C1008F78C2 /* stockController.m */,
+				5B1DC2B82B5E68C1008F78C2 /* stockModel.h */,
+				5B1DC2B92B5E68C1008F78C2 /* stockController.xib */,
+			);
+			name = stockController;
+			path = "BGFMDB-Example/stockController";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +179,8 @@
 			files = (
 				5B1DC2A22B5E6252008F78C2 /* LaunchScreen.storyboard in Resources */,
 				5B1DC29F2B5E6252008F78C2 /* Assets.xcassets in Resources */,
+				5B1DC2B22B5E68BD008F78C2 /* dictToModelController.xib in Resources */,
+				5B1DC2BC2B5E68C1008F78C2 /* stockController.xib in Resources */,
 				5B1DC29D2B5E6250008F78C2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,7 +194,11 @@
 			files = (
 				5B1DC29A2B5E6250008F78C2 /* ViewController.m in Sources */,
 				5B1DC2942B5E6250008F78C2 /* AppDelegate.m in Sources */,
+				5B1DC2B32B5E68BD008F78C2 /* dictToModelController.m in Sources */,
+				5B1DC2B12B5E68BD008F78C2 /* Animal.m in Sources */,
+				5B1DC2BB2B5E68C1008F78C2 /* stockController.m in Sources */,
 				5B1DC2A52B5E6252008F78C2 /* main.m in Sources */,
+				5B1DC2BA2B5E68C1008F78C2 /* stockModel.m in Sources */,
 				5B1DC2972B5E6250008F78C2 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
