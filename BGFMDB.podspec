@@ -96,7 +96,7 @@ s.source_files = 'BGFMDB/libs/BG/BGFMDB.h'
 
 # s.subspec 'FMDB' do |ss|
 # ss.source_files = 'BGFMDB/libs/FMDB/*.{h,m}'
-end
+# end
 
 s.subspec 'BG' do |ss|
 ss.source_files = 'BGFMDB/libs/BG/*.{h,m}'
