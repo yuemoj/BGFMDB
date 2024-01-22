@@ -6,5 +6,5 @@ target 'BGFMDB-Example' do
   use_frameworks!
 
   # Pods for BGFMDB-Example
-  pod 'BGFMDB'
+  pod 'BGFMDB-Privacy'
 end
