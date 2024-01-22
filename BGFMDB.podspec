@@ -91,15 +91,15 @@ s.source       = { :git => 'https://github.com/yuemoj/BGFMDB.git', :tag => s.ver
 #  Not including the public_header_files will make all headers public.
 #
 
-s.public_header_files = 'BGFMDB/libs/BG/BGFMDB.h'
-s.source_files = 'BGFMDB/libs/BG/BGFMDB.h'
+s.public_header_files = 'libs/BG/BGFMDB.h'
+s.source_files = 'libs/BG/BGFMDB.h'
 
 # s.subspec 'FMDB' do |ss|
 # ss.source_files = 'BGFMDB/libs/FMDB/*.{h,m}'
 # end
 
 s.subspec 'BG' do |ss|
-ss.source_files = 'BGFMDB/libs/BG/*.{h,m}'
+ss.source_files = 'libs/BG/*.{h,m}'
 ss.dependency 'FMDB', '~> 2.7'
 end
 
