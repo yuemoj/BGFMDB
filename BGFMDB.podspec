@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
 #  summary should be tweet-length, and the description more in depth.
 #
 
-s.name         = "BGFMDB"
-s.version      = "2.0.13"
+s.name         = "BGFMDB-Privacy"
+s.version      = "1.0.0"
 s.summary      = "完美支持iOS大部分类型数据的存储,同时带有 字典转模型 功能模块."
 
 # This description is used to generate tags and improve search results.
@@ -53,10 +53,7 @@ s.license      = "MIT"
 #  profile URL.
 #
 
-s.author             = { "huangzhibiao" => "450426721@qq.com" }
-# Or just: s.author    = "huangzhibiao"
-# s.authors            = { "huangzhibiao" => "450426721@qq.com" }
-# s.social_media_url   = "http://twitter.com/huangzhibiao"
+s.author             = { "yuemoj" => "yj_745@163.com" }
 
 # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 #
