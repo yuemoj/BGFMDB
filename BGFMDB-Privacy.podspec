@@ -89,7 +89,7 @@ s.source       = { :git => 'https://github.com/yuemoj/BGFMDB.git', :tag => s.ver
 #
 
 s.public_header_files = 'libs/BG/BGFMDB.h'
-# s.source_files = 'libs/BG/BGFMDB.h'
+s.source_files = 'libs/BG/BGFMDB.h'
 
 # s.subspec 'FMDB' do |ss|
 # ss.source_files = 'BGFMDB/libs/FMDB/*.{h,m}'
