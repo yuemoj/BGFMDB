@@ -28,7 +28,7 @@ s.description  = <<-DESC
 完美支持iOS大部分类型数据的存储,同时带有 字典转模型 功能模块.
 DESC
 
-s.homepage     = "https://github.com/huangzhibiao/BGFMDB"
+s.homepage     = "https://github.com/yuemoj/BGFMDB.git"
 # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -62,7 +62,7 @@ s.author             = { "yuemoj" => "yj_745@163.com" }
 #
 
 # s.platform     = :ios
-s.platform     = :ios, "8.0"
+s.platform     = :ios, "13.0"
 
 #  When using multiple platforms
 # s.ios.deployment_target = "5.0"
