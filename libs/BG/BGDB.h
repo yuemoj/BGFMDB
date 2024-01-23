@@ -40,11 +40,11 @@
 /**
  事务操作.
  */
--(void)inTransaction:(BOOL (^_Nonnull)())block;
+-(void)inTransaction:(BOOL (^_Nonnull)(void))block;
 /**
  添加操作到线程池
  */
--(void)addToThreadPool:(void (^_Nonnull)())block;
+-(void)addToThreadPool:(void (^_Nonnull)(void))block;
 /**
  注册数据变化监听.
  @claName 注册监听的类名.
@@ -290,7 +290,7 @@
 /**
  遍历字典元素.
  */
--(void)bg_enumerateKeysAndObjectsUsingBlock:(void (^ _Nonnull)(NSString* _Nonnull key, id _Nonnull value,BOOL *stop))block;
+-(void)bg_enumerateKeysAndObjectsUsingBlock:(void (^ _Nonnull)(NSString* _Nonnull key, id _Nonnull value,BOOL * _Nonnull stop))block;
 /**
  获取字典元素.
  */

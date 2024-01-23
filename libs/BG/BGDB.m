@@ -179,7 +179,7 @@ static BGDB* BGdb = nil;
 /**
  添加操作到线程池
  */
--(void)addToThreadPool:(void (^_Nonnull)())block{
+-(void)addToThreadPool:(void (^_Nonnull)(void))block{
     NSAssert(block, @"block is nil!");
     dispatch_async(self.mulThreadPoolQueue, ^{
         NSString* key = [NSString stringWithFormat:@"b_%@_%@",@([[NSDate new] timeIntervalSince1970]),@(random())];
@@ -210,7 +210,7 @@ static BGDB* BGdb = nil;
 }
 
 //事务操作
--(void)inTransaction:(BOOL (^_Nonnull)())block{
+-(void)inTransaction:(BOOL (^_Nonnull)(void))block{
     NSAssert(block, @"block is nil!");
     if([NSThread currentThread].isMainThread){//主线程直接执行
         [self executeTransation:block];
@@ -226,21 +226,21 @@ static BGDB* BGdb = nil;
 /*
  执行事务操作
  */
--(void)executeTransation:(BOOL (^_Nonnull)())block{
+-(void)executeTransation:(BOOL (^_Nonnull)(void))block{
     [self executeDB:^(FMDatabase * _Nonnull db) {
-        _inTransaction = db.isInTransaction;
-        if (!_inTransaction) {
-            _inTransaction = [db beginTransaction];
+        self->_inTransaction = db.isInTransaction;
+        if (!self->_inTransaction) {
+            self->_inTransaction = [db beginTransaction];
         }
         BOOL isCommit = NO;
         isCommit = block();
-        if (_inTransaction){
+        if (self->_inTransaction){
             if (isCommit) {
                 [db commit];
             }else {
                 [db rollback];
             }
-            _inTransaction = NO;
+            self->_inTransaction = NO;
         }
     }];
 }
@@ -258,7 +258,7 @@ static BGDB* BGdb = nil;
         }
 
         while(self.transactionBlocks.count) {
-            BOOL (^block)() = [self.transactionBlocks lastObject];
+            BOOL (^block)(void) = [self.transactionBlocks lastObject];
             [self executeTransation:block];
             [self.transactionBlocks removeLastObject];
         }
