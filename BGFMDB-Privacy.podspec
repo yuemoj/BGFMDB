@@ -89,7 +89,7 @@ s.source       = { :git => 'https://github.com/yuemoj/BGFMDB.git', :tag => s.ver
 #
 
 s.public_header_files = 'libs/BG/BGFMDB.h'
-s.source_files = 'libs/BG/BGFMDB.h'
+# s.source_files = 'libs/BG/BGFMDB.h'
 
 # s.subspec 'FMDB' do |ss|
 # ss.source_files = 'BGFMDB/libs/FMDB/*.{h,m}'
@@ -97,7 +97,7 @@ s.source_files = 'libs/BG/BGFMDB.h'
 
 s.subspec 'BG' do |ss|
 ss.source_files = 'libs/BG/*.{h,m}'
-ss.dependency 'FMDB', '~> 2.7'
+ss.dependency 'FMDB', '~> 2.7.8'
 end
 
 #s.source_files  = 'BGFMDB/libs/BG/*.{h,m}', 'BGFMDB/libs/FMDB/*.{h,m}'
