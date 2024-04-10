@@ -77,8 +77,9 @@ s.platform     = :ios, "13.0"
 #  Supports git, hg, bzr, svn and HTTP.
 #
 
-s.source       = { :git => 'https://github.com/yuemoj/BGFMDB.git', :tag => s.version, :submodules => true }
+# s.source       = { :git => 'https://github.com/yuemoj/BGFMDB.git', :tag => s.version, :submodules => true }
 
+s.source       = { :git => 'https://github.com/yuemoj/BGFMDB.git', :branch => 'master' }
 
 # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 #
@@ -97,7 +98,7 @@ s.source_files = 'libs/BG/BGFMDB.h'
 
 s.subspec 'BG' do |ss|
 ss.source_files = 'libs/BG/*.{h,m}'
-ss.dependency 'FMDB', '~> 2.7.5'
+ss.dependency 'FMDB', '~> 2.7.10'
 end
 
 #s.source_files  = 'BGFMDB/libs/BG/*.{h,m}', 'BGFMDB/libs/FMDB/*.{h,m}'
