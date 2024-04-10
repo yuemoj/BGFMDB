@@ -97,7 +97,7 @@ s.source_files = 'libs/BG/BGFMDB.h'
 
 s.subspec 'BG' do |ss|
 ss.source_files = 'libs/BG/*.{h,m}'
-ss.dependency 'FMDB', '~> 2.7.5'
+ss.dependency 'FMDB', '~> 2.7.8'
 end
 
 #s.source_files  = 'BGFMDB/libs/BG/*.{h,m}', 'BGFMDB/libs/FMDB/*.{h,m}'
