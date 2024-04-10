@@ -2,13 +2,13 @@ PODS:
   - BGFMDB-Privacy (1.0.0):
     - BGFMDB-Privacy/BG (= 1.0.0)
   - BGFMDB-Privacy/BG (1.0.0):
-    - FMDB (~> 2.7.5)
-  - FMDB (2.7.5):
-    - FMDB/standard (= 2.7.5)
-  - FMDB/standard (2.7.5)
+    - FMDB (~> 2.7.10)
+  - FMDB (2.7.10):
+    - FMDB/standard (= 2.7.10)
+  - FMDB/standard (2.7.10)
 
 DEPENDENCIES:
-  - BGFMDB-Privacy
+  - BGFMDB-Privacy (~> 1.0.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -17,9 +17,9 @@ SPEC REPOS:
     - BGFMDB-Privacy
 
 SPEC CHECKSUMS:
-  BGFMDB-Privacy: 3a30e39e2825e339be4f51e95d63bdb34f8d3b31
-  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  BGFMDB-Privacy: a669a1827a78f1bc5a039575051640eee1e494e4
+  FMDB: eae540775bf7d0c87a5af926ae37af69effe5a19
 
-PODFILE CHECKSUM: fbe74bb326ba815dcd2eba3e8d27d303fa626d8e
+PODFILE CHECKSUM: db056232a2f7d04778036fa72ad7d3473495b102
 
 COCOAPODS: 1.14.3

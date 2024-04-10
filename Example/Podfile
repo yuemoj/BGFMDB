@@ -7,8 +7,8 @@ target 'BGFMDB-Example' do
   use_frameworks!
 
   # Pods for BGFMDB-Example
-  pod 'BGFMDB-Privacy', :source=>'https://github.com/yuemoj/BGFMDB.git'
-#  pod 'BGFMDB-Privacy', '~> 1.0.0'#, :source=>'https://github.com/yuemoj/BGFMDB.git'
+#  pod 'BGFMDB-Privacy', :source=>'https://github.com/yuemoj/BGFMDB.git'
+  pod 'BGFMDB-Privacy', '~> 1.0.0'#, :source=>'https://github.com/yuemoj/BGFMDB.git'
 end
 
 post_install do |installer|
