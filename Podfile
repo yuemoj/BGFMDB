@@ -6,7 +6,7 @@ target 'BGFMDB' do
   use_frameworks!
 
   # Pods for BGFMDB
-  pod 'FMDB', '~> 2.7.8'
+  pod 'FMDB', '~> 2.7.10'
 end
 
 post_install do |installer|
